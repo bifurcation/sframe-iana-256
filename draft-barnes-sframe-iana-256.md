@@ -9,18 +9,18 @@ number:
 date:
 consensus: true
 v: 3
-area: SEC
-workgroup: SFrame Working Group
+area: "Applications and Real-Time"
+workgroup: "Secure Media Frames"
 keyword:
  - SFrame
  - cryptography
 venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
+  group: "Secure Media Frames"
+  type: "Working Group"
+  mail: "sframe@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/sframe/"
+  github: "bifurcation/sframe-iana-256"
+  latest: "https://bifurcation.github.io/sframe-iana-256/draft-barnes-sframe-iana-256.html"
 
 author:
  -
