@@ -19,22 +19,21 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Updates to SFrame Ciphersuites Registry"
+abbrev: "SFrame IANA Updates"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
+docname: draft-barnes-sframe-iana-256
+submissiontype: IETF
 number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: WG Working Group
+area: SEC
+workgroup: SFrame Working Group
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - SFrame
+ - cryptography
 venue:
   group: WG
   type: Working Group
@@ -45,20 +44,17 @@ venue:
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: your.email@example.com
+    fullname: Richard Barnes
+    organization: Cisco
+    email: rlb@ipv.sx
 
 normative:
 
 informative:
 
-...
-
 --- abstract
 
 TODO Abstract
-
 
 --- middle
 
