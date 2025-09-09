@@ -1,29 +1,5 @@
 ---
-<<<<<<< Updated upstream
-title: "Updates to SFrame Ciphersuites Registry"
-=======
-###
-# Internet-Draft Markdown Template
-#
-# Rename this file from draft-todo-yourname-protocol.md to get started.
-# Draft name format is "draft-<yourname>-<workgroup>-<name>.md".
-#
-# For initial setup, you only need to edit the first block of fields.
-# Only "title" needs to be changed; delete "abbrev" if your title is short.
-# Any other content can be edited, but be careful not to introduce errors.
-# Some fields will be set automatically during setup if they are unchanged.
-#
-# Don't include "-00" or "-latest" in the filename.
-# Labels in the form draft-<yourname>-<workgroup>-<name>-latest are used by
-# the tools to refer to the current version; see "docname" for example.
-#
-# This template uses kramdown-rfc: https://github.com/cabo/kramdown-rfc
-# You can replace the entire file if you prefer a different format.
-# Change the file extension to match the format (.xml for XML, etc...)
-#
-###
 title: "Updates to SFrame Cipher Suites Registry"
->>>>>>> Stashed changes
 abbrev: "SFrame IANA Updates"
 category: info
 
@@ -51,6 +27,15 @@ author:
     fullname: Richard Barnes
     organization: Cisco
     email: rlb@ipv.sx
+ -
+    fullname: Emad Omara
+    organization: Apple
+    email: eomara@apple.com
+ -
+    fullname: Aron Rosenberg
+    organization: Apple
+    email: aron.rosenberg@apple.com 
+
 
 normative:
 
@@ -162,10 +147,9 @@ The following new entries should be added to the SFrame Cipher Suites registry:
 
 | Value           | Name                          | Nh | Nka | Nk | Nn | Nt | R | Reference |
 |:----------------|:------------------------------|:---|:----|:---|:---|:---|:--|:----------|
-| 0x0000          | Reserved                      | -  | -   | -  | -  | -  | - | RFC XXXX  |
-| 0x0001          | `AES_256_CTR_HMAC_SHA512_80`  | 64 | 32  | 96 | 12 | 10 | Y | RFC XXXX  |
-| 0x0002          | `AES_256_CTR_HMAC_SHA512_64`  | 64 | 32  | 96 | 12 |  8 | Y | RFC XXXX  |
-| 0x0003          | `AES_256_CTR_HMAC_SHA512_32`  | 64 | 32  | 96 | 12 |  4 | Y | RFC XXXX  |
+| 0x0006          | `AES_256_CTR_HMAC_SHA512_80`  | 64 | 32  | 96 | 12 | 10 | Y | RFC XXXX  |
+| 0x0007          | `AES_256_CTR_HMAC_SHA512_64`  | 64 | 32  | 96 | 12 |  8 | Y | RFC XXXX  |
+| 0x0008          | `AES_256_CTR_HMAC_SHA512_32`  | 64 | 32  | 96 | 12 |  4 | Y | RFC XXXX  |
 {: #new-entries title="New entries SFrame Cipher Suites registry" }
 
 
