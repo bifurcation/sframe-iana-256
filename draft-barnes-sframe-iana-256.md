@@ -162,10 +162,9 @@ The following new entries should be added to the SFrame Cipher Suites registry:
 
 | Value           | Name                          | Nh | Nka | Nk | Nn | Nt | R | Reference |
 |:----------------|:------------------------------|:---|:----|:---|:---|:---|:--|:----------|
-| 0x0000          | Reserved                      | -  | -   | -  | -  | -  | - | RFC XXXX  |
-| 0x0001          | `AES_256_CTR_HMAC_SHA512_80`  | 64 | 32  | 96 | 12 | 10 | Y | RFC XXXX  |
-| 0x0002          | `AES_256_CTR_HMAC_SHA512_64`  | 64 | 32  | 96 | 12 |  8 | Y | RFC XXXX  |
-| 0x0003          | `AES_256_CTR_HMAC_SHA512_32`  | 64 | 32  | 96 | 12 |  4 | Y | RFC XXXX  |
+| 0x0006          | `AES_256_CTR_HMAC_SHA512_80`  | 64 | 32  | 96 | 12 | 10 | Y | RFC XXXX  |
+| 0x0007          | `AES_256_CTR_HMAC_SHA512_64`  | 64 | 32  | 96 | 12 |  8 | Y | RFC XXXX  |
+| 0x0008          | `AES_256_CTR_HMAC_SHA512_32`  | 64 | 32  | 96 | 12 |  4 | Y | RFC XXXX  |
 {: #new-entries title="New entries SFrame Cipher Suites registry" }
 
 
