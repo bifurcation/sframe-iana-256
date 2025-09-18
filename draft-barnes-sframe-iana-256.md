@@ -34,12 +34,16 @@ author:
  -
     fullname: Aron Rosenberg
     organization: Apple
-    email: aron.rosenberg@apple.com 
+    email: aron.rosenberg@apple.com
 
 
 normative:
 
 informative:
+  TestVectors:
+    title: "SFrame Test Vectors"
+    target: https://github.com/bifurcation/sframe-iana-256/blob/main/test-vectors/test-vectors-aes256.json
+    date: 2025-09
 
 --- abstract
 
@@ -107,7 +111,7 @@ This document makes two requests of IANA: Updating the columns in the "SFrame
 Cipher Suites" registry and adding entries to the updated registry for the new
 cipher suites defined in this document.
 
-## "SFrame Cipher Suites" Registry Update
+## "SFrame Cipher Suites" Registry Update {#sframe-cipher-suites}
 
 The SFrame Cipher Suites registry should be updated to add the following
 columns:
@@ -155,7 +159,76 @@ The following new entries should be added to the SFrame Cipher Suites registry:
 
 --- back
 
-# Acknowledgments
-{:numbered="false"}
+# Test Vectors
 
-TODO acknowledge.
+This section provides a set of test vectors that implementations can use to
+verify that they correctly implement SFrame encryption and decryption with the
+cipher suites registered in this document.  Test vectors are provided for both
+the AES-256-CTR-HMAC construction and for full SFrame encryption with the new
+cipher suites.
+
+All values are either numeric or byte strings.  Numeric values are represented
+as hex values, prefixed with `0x`.  Byte strings are represented in hex
+encoding.
+
+Line breaks and whitespace within values are inserted to conform to the width
+requirements of the RFC format.  They should be removed before use.
+
+These test vectors are also available in JSON format at {{TestVectors}}.  In the
+JSON test vectors, numeric values are JSON numbers and byte string values are
+JSON strings containing the hex encoding of the byte strings.
+
+## AEAD Encryption/Decryption Using AES-CTR and HMAC
+
+For each case, we provide:
+
+* `cipher_suite`: The index of the cipher suite in use (see
+  {{sframe-cipher-suites}})
+* `key`: The `key` input to encryption/decryption
+* `enc_key`: The encryption subkey produced by the `derive_subkeys()` algorithm
+* `auth_key`: The encryption subkey produced by the `derive_subkeys()` algorithm
+* `nonce`: The `nonce` input to encryption/decryption
+* `aad`: The `aad` input to encryption/decryption
+* `pt`: The plaintext
+* `ct`: The ciphertext
+
+An implementation should verify that the following are true, where
+`AEAD.Encrypt` and `AEAD.Decrypt` are as defined in {{Section 4.5.1 of RFC9605}}:
+
+* `AEAD.Encrypt(key, nonce, aad, pt) == ct`
+* `AEAD.Decrypt(key, nonce, aad, ct) == pt`
+
+The other values in the test vector are intermediate values provided to
+facilitate debugging of test failures.
+
+{::include test-vectors/aes256-ctr-hmac.md}
+
+## SFrame Encryption/Decryption
+
+For each case, we provide:
+
+* `cipher_suite`: The index of the cipher suite in use (see
+  {{sframe-cipher-suites}})
+* `kid`: A KID value
+* `ctr`: A CTR value
+* `base_key`: The `base_key` input to the `derive_key_salt` algorithm
+* `sframe_key_label`: The label used to derive `sframe_key` in the `derive_key_salt` algorithm
+* `sframe_salt_label`: The label used to derive `sframe_salt` in the `derive_key_salt` algorithm
+* `sframe_secret`: The `sframe_secret` variable in the `derive_key_salt` algorithm
+* `sframe_key`: The `sframe_key` value produced by the `derive_key_salt` algorithm
+* `sframe_salt`: The `sframe_salt` value produced by the `derive_key_salt` algorithm
+* `metadata`: The `metadata` input to the SFrame `encrypt` algorithm
+* `pt`: The plaintext
+* `ct`: The SFrame ciphertext
+
+An implementation should verify that the following are true, where
+`encrypt` and `decrypt` are as defined in {{Section 4.4 of RFC9605}}, using an SFrame
+context initialized with `base_key` assigned to `kid`:
+
+* `encrypt(ctr, kid, metadata, plaintext) == ct`
+* `decrypt(metadata, ct) == pt`
+
+The other values in the test vector are intermediate values provided to
+facilitate debugging of test failures.
+
+{::include test-vectors/sframe-aes256-ctr-hmac.md}
