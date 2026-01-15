@@ -186,7 +186,7 @@ For each case, we provide:
   {{sframe-cipher-suites}})
 * `key`: The `key` input to encryption/decryption
 * `enc_key`: The encryption subkey produced by the `derive_subkeys()` algorithm
-* `auth_key`: The encryption subkey produced by the `derive_subkeys()` algorithm
+* `auth_key`: The authentication subkey produced by the `derive_subkeys()` algorithm
 * `nonce`: The `nonce` input to encryption/decryption
 * `aad`: The `aad` input to encryption/decryption
 * `pt`: The plaintext
