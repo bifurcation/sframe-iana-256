@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-15T00:04:31.054106+00:00",
+  "timestamp": "2026-01-18T00:04:30.892614+00:00",
   "repo": "bifurcation/sframe-iana-256",
   "labels": [
     {
@@ -110,6 +110,32 @@
       "mergeCommit": {
         "oid": "232b5dfd6591b3b6011e131ac6dc82ce3a2f78a1"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOPp-cqM69d3kL",
+      "title": "IETF AD Editorial Fixes.",
+      "url": "https://github.com/bifurcation/sframe-iana-256/pull/3",
+      "state": "OPEN",
+      "author": "aronrosenberg",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "* Fix a minor typo in the description of the auth subkey.",
+      "createdAt": "2026-01-15T20:50:39Z",
+      "updatedAt": "2026-01-15T20:50:40Z",
+      "baseRepository": "bifurcation/sframe-iana-256",
+      "baseRefName": "main",
+      "baseRefOid": "232b5dfd6591b3b6011e131ac6dc82ce3a2f78a1",
+      "headRepository": "aronrosenberg/sframe-iana-256",
+      "headRefName": "editorial_fixes",
+      "headRefOid": "f890645cf29cdcf28793bb156fd7bbb7de251c69",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
