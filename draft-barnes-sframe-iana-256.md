@@ -107,9 +107,10 @@ to be used in environments that require a 256-bit security level.
 
 # IANA Considerations
 
-This document makes two requests of IANA: Updating the columns in the "SFrame
-Cipher Suites" registry and adding entries to the updated registry for the new
-cipher suites defined in this document.
+This document makes three requests of IANA: Updating the columns in the "SFrame
+Cipher Suites" registry, adding entries to the updated registry for the new
+cipher suites defined in this document, and add this document as an additional
+reference for this registry."
 
 ## "SFrame Cipher Suites" Registry Update {#sframe-cipher-suites}
 
