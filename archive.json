@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-17T00:06:57.113309+00:00",
+  "timestamp": "2026-02-19T00:07:27.220026+00:00",
   "repo": "bifurcation/sframe-iana-256",
   "labels": [
     {
@@ -125,13 +125,13 @@
       "labels": [],
       "body": "* Fix a minor typo in the description of the auth subkey.\r\n* Don't remove the Change Controller column from the IANA registry",
       "createdAt": "2026-01-15T20:50:39Z",
-      "updatedAt": "2026-01-29T20:46:30Z",
+      "updatedAt": "2026-02-18T17:08:24Z",
       "baseRepository": "bifurcation/sframe-iana-256",
       "baseRefName": "main",
       "baseRefOid": "232b5dfd6591b3b6011e131ac6dc82ce3a2f78a1",
       "headRepository": "aronrosenberg/sframe-iana-256",
       "headRefName": "editorial_fixes",
-      "headRefOid": "57a1ef4bcc9e1bf4428065fe1beac7a0473e46b5",
+      "headRefOid": "1eeecbebd51863bbf8510a6ad129719ba80bc3e3",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
