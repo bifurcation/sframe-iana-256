@@ -5,9 +5,9 @@
 Secure Media Frames                                            R. Barnes
 Internet-Draft                                                     Cisco
 Intended status: Informational                                  E. Omara
-Expires: 22 March 2026                                      A. Rosenberg
+Expires: 15 October 2026                                    A. Rosenberg
                                                                    Apple
-                                                       18 September 2025
+                                                           13 April 2026
 
 
                 Updates to SFrame Cipher Suites Registry
@@ -56,11 +56,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 March 2026.
+   This Internet-Draft will expire on 15 October 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -90,13 +90,6 @@ Table of Contents
    Authors' Addresses
 
 1.  Introduction
-
-   The Secure Frames (SFrame) protocol specification defines an IANA
-   registry for cipher suites.  The initial definition in Section 8.1 of
-   [RFC9605] is missing several important fields.  This document
-   requests that IANA add those fields and defines the contents of those
-   fields for current entries.  We also define new entries that extend
-   the SFrame CTR+HMAC construction to support AES-256.
 
    This document addresses two omissions in the Secure Frames (SFrame)
    protocol specification [RFC9605].  First, the definition in
