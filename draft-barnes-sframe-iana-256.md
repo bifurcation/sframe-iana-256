@@ -1,7 +1,8 @@
 ---
 title: "Updates to SFrame Cipher Suites Registry"
 abbrev: "SFrame IANA Updates"
-category: info
+category: std
+updates: 9605
 
 docname: draft-barnes-sframe-iana-256-latest
 submissiontype: IETF
@@ -68,10 +69,6 @@ based on AES-CTR and HMAC (in {{Section 4.5.1 of !RFC9605}}) is defined only for
 the 128-bit security level.  This document registers parallel constructions at
 the 256-bit security level.
 
-# Conventions and Definitions
-
-{::boilerplate bcp14-tagged}
-
 # AES-256-CTR with HMAC-SHA512
 
 {{Section 4.5.1 of !RFC9605}} defines a compound authenticated encryption
@@ -101,9 +98,10 @@ to be used in environments that require a 256-bit security level.
 
 # IANA Considerations
 
-This document makes two requests of IANA: Updating the columns in the "SFrame
-Cipher Suites" registry and adding entries to the updated registry for the new
-cipher suites defined in this document.
+This document makes three requests of IANA: Updating the columns in the "SFrame
+Cipher Suites" registry, adding entries to the updated registry for the new
+cipher suites defined in this document, and add this document as an additional
+reference for this registry.
 
 ## "SFrame Cipher Suites" Registry Update {#sframe-cipher-suites}
 
@@ -123,31 +121,29 @@ columns:
 * `Nt`: The overhead in bytes of the encryption algorithm (typically the size of
   a "tag" that is added to the plaintext)
 
-The "Change Controller" entry should be removed.
-
 {{new-cipher-suite-registry}} illustrates the new structure of the registry, and provides
 the required values for the currently registered entries.
 
-| Value           | Name                          | Nh | Nka | Nk | Nn | Nt | R | Reference |
-|:----------------|:------------------------------|:---|:----|:---|:---|:---|:--|:----------|
-| 0x0000          | Reserved                      | -  | -   | -  | -  | -  | - | RFC 9605  |
-| 0x0001          | `AES_128_CTR_HMAC_SHA256_80`  | 32 | 16  | 48 | 12 | 10 | Y | RFC 9605  |
-| 0x0002          | `AES_128_CTR_HMAC_SHA256_64`  | 32 | 16  | 48 | 12 |  8 | Y | RFC 9605  |
-| 0x0003          | `AES_128_CTR_HMAC_SHA256_32`  | 32 | 16  | 48 | 12 |  4 | Y | RFC 9605  |
-| 0x0004          | `AES_128_GCM_SHA256_128`      | 32 | n/a | 16 | 12 | 16 | Y | RFC 9605  |
-| 0x0005          | `AES_256_GCM_SHA512_128`      | 64 | n/a | 32 | 12 | 16 | Y | RFC 9605  |
-| 0xF000 - 0xFFFF | Reserved for Private Use      | -  | -   | -  | -  | -  | - | RFC 9605  |
+| Value           | Name                          | Nh | Nka | Nk | Nn | Nt | R | Reference | Change Controller |
+|:----------------|:------------------------------|:---|:----|:---|:---|:---|:--|:----------|:------------------|
+| 0x0000          | Reserved                      | -  | -   | -  | -  | -  | - | RFC 9605  | IETF              |
+| 0x0001          | `AES_128_CTR_HMAC_SHA256_80`  | 32 | 16  | 48 | 12 | 10 | Y | RFC 9605  | IETF              |
+| 0x0002          | `AES_128_CTR_HMAC_SHA256_64`  | 32 | 16  | 48 | 12 |  8 | Y | RFC 9605  | IETF              |
+| 0x0003          | `AES_128_CTR_HMAC_SHA256_32`  | 32 | 16  | 48 | 12 |  4 | Y | RFC 9605  | IETF              |
+| 0x0004          | `AES_128_GCM_SHA256_128`      | 32 | n/a | 16 | 12 | 16 | Y | RFC 9605  | IETF              |
+| 0x0005          | `AES_256_GCM_SHA512_128`      | 64 | n/a | 32 | 12 | 16 | Y | RFC 9605  | IETF              |
+| 0xF000 - 0xFFFF | Reserved for Private Use      | -  | -   | -  | -  | -  | - | RFC 9605  | IETF              |
 {: #new-cipher-suite-registry title="New structure and contents of the SFrame Cipher Suites registry" }
 
 ## Cipher Suites for AES-256-CTR with HMAC-SHA512 {#cipher-suites}
 
 The following new entries should be added to the SFrame Cipher Suites registry:
 
-| Value           | Name                          | Nh | Nka | Nk | Nn | Nt | R | Reference |
-|:----------------|:------------------------------|:---|:----|:---|:---|:---|:--|:----------|
-| 0x0006          | `AES_256_CTR_HMAC_SHA512_80`  | 64 | 32  | 96 | 12 | 10 | Y | RFC XXXX  |
-| 0x0007          | `AES_256_CTR_HMAC_SHA512_64`  | 64 | 32  | 96 | 12 |  8 | Y | RFC XXXX  |
-| 0x0008          | `AES_256_CTR_HMAC_SHA512_32`  | 64 | 32  | 96 | 12 |  4 | Y | RFC XXXX  |
+| Value           | Name                          | Nh | Nka | Nk | Nn | Nt | R | Reference | Change Controller |
+|:----------------|:------------------------------|:---|:----|:---|:---|:---|:--|:----------|:------------------|
+| 0x0006          | `AES_256_CTR_HMAC_SHA512_80`  | 64 | 32  | 96 | 12 | 10 | Y | RFC XXXX  | IETF              |
+| 0x0007          | `AES_256_CTR_HMAC_SHA512_64`  | 64 | 32  | 96 | 12 |  8 | Y | RFC XXXX  | IETF              |
+| 0x0008          | `AES_256_CTR_HMAC_SHA512_32`  | 64 | 32  | 96 | 12 |  4 | Y | RFC XXXX  | IETF              |
 {: #new-entries title="New entries SFrame Cipher Suites registry" }
 
 
@@ -180,7 +176,7 @@ For each case, we provide:
   {{sframe-cipher-suites}})
 * `key`: The `key` input to encryption/decryption
 * `enc_key`: The encryption subkey produced by the `derive_subkeys()` algorithm
-* `auth_key`: The encryption subkey produced by the `derive_subkeys()` algorithm
+* `auth_key`: The authentication subkey produced by the `derive_subkeys()` algorithm
 * `nonce`: The `nonce` input to encryption/decryption
 * `aad`: The `aad` input to encryption/decryption
 * `pt`: The plaintext
