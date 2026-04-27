@@ -1,7 +1,8 @@
 ---
 title: "Updates to SFrame Cipher Suites Registry"
 abbrev: "SFrame IANA Updates"
-category: info
+category: std
+updates: 9605
 
 docname: draft-barnes-sframe-iana-256-latest
 submissiontype: IETF
