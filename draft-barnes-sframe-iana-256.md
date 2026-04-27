@@ -75,10 +75,6 @@ based on AES-CTR and HMAC (in {{Section 4.5.1 of !RFC9605}}) is defined only for
 the 128-bit security level.  This document registers parallel constructions at
 the 256-bit security level.
 
-# Conventions and Definitions
-
-{::boilerplate bcp14-tagged}
-
 # AES-256-CTR with HMAC-SHA512
 
 {{Section 4.5.1 of !RFC9605}} defines a compound authenticated encryption
