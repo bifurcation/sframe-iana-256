@@ -50,8 +50,9 @@ informative:
 
 This document addresses two omissions in the Secure Frames (SFrame) protocol
 specification.  First, the definition of the IANA registry for SFrame
-ciphersuites omits several important fields.  This document requests that IANA
-add those fields and defines the contents of those fields for current entries.
+ciphersuites omits several important fields.  This document updates the IANA
+registry specified by {{!RFC9605}} and requests that IANA add those fields,
+defining the contents of those fields for current entries.
 Second, the AEAD construction based on AES-CTR and HMAC is defined only for
 the 128-bit security level.  This document registers parallel constructions
 at the 256-bit security level.
@@ -62,9 +63,10 @@ at the 256-bit security level.
 
 The Secure Frames (SFrame) protocol specification defines an IANA registry for
 cipher suites.  The initial definition in {{Section 8.1 of !RFC9605}} is missing
-several important fields.  This document requests that IANA add those fields and
-defines the contents of those fields for current entries.  We also define new
-entries that extend the SFrame CTR+HMAC construction to support AES-256.
+several important fields.  This document updates the IANA registry specified by
+{{!RFC9605}} and requests that IANA add those fields and defines the contents of
+those fields for current entries.  We also define new entries that extend the
+SFrame CTR+HMAC construction to support AES-256.
 
 This document addresses two omissions in the Secure Frames (SFrame) protocol
 specification {{!RFC9605}}.  First, the definition in {{Section 8.1 of
