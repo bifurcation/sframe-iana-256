@@ -4,10 +4,10 @@
 
 Secure Media Frames                                            R. Barnes
 Internet-Draft                                                     Cisco
-Intended status: Informational                                  E. Omara
-Expires: 15 October 2026                                    A. Rosenberg
-                                                                   Apple
-                                                           13 April 2026
+Updates: 9605 (if approved)                                     E. Omara
+Intended status: Standards Track                            A. Rosenberg
+Expires: 30 October 2026                                           Apple
+                                                           28 April 2026
 
 
                 Updates to SFrame Cipher Suites Registry
@@ -18,10 +18,11 @@ Abstract
    This document addresses two omissions in the Secure Frames (SFrame)
    protocol specification.  First, the definition of the IANA registry
    for SFrame ciphersuites omits several important fields.  This
-   document requests that IANA add those fields and defines the contents
-   of those fields for current entries.  Second, the AEAD construction
-   based on AES-CTR and HMAC is defined only for the 128-bit security
-   level.  This document registers parallel constructions at the 256-bit
+   document updates the IANA registry specified by [RFC9605] and
+   requests that IANA add those fields, defining the contents of those
+   fields for current entries.  Second, the AEAD construction based on
+   AES-CTR and HMAC is defined only for the 128-bit security level.
+   This document registers parallel constructions at the 256-bit
    security level.
 
 About This Document
@@ -56,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 October 2026.
+   This Internet-Draft will expire on 30 October 2026.
 
 Copyright Notice
 
@@ -75,15 +76,14 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Conventions and Definitions
-   3.  AES-256-CTR with HMAC-SHA512
-   4.  Security Considerations
-   5.  IANA Considerations
-     5.1.  "SFrame Cipher Suites" Registry Update
-     5.2.  Cipher Suites for AES-256-CTR with HMAC-SHA512
-   6.  References
-     6.1.  Normative References
-     6.2.  Informative References
+   2.  AES-256-CTR with HMAC-SHA512
+   3.  Security Considerations
+   4.  IANA Considerations
+     4.1.  "SFrame Cipher Suites" Registry Update
+     4.2.  Cipher Suites for AES-256-CTR with HMAC-SHA512
+   5.  References
+     5.1.  Normative References
+     5.2.  Informative References
    Appendix A.  Test Vectors
      A.1.  AEAD Encryption/Decryption Using AES-CTR and HMAC
      A.2.  SFrame Encryption/Decryption
@@ -101,15 +101,7 @@ Table of Contents
    level.  This document registers parallel constructions at the 256-bit
    security level.
 
-2.  Conventions and Definitions
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in
-   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
-
-3.  AES-256-CTR with HMAC-SHA512
+2.  AES-256-CTR with HMAC-SHA512
 
    Section 4.5.1 of [RFC9605] defines a compound authenticated
    encryption construction, using the unauthenticated CTR mode of AES
@@ -130,9 +122,9 @@ Table of Contents
       bytes.
 
    Identifiers for cipher suites using AES-256-CTR and HMAC-SHA512 are
-   defined in Section 5.2.
+   defined in Section 4.2.
 
-4.  Security Considerations
+3.  Security Considerations
 
    The registry changes in this document have no affect on the security
    of SFrame.
@@ -141,13 +133,14 @@ Table of Contents
    construction to be used in environments that require a 256-bit
    security level.
 
-5.  IANA Considerations
+4.  IANA Considerations
 
-   This document makes two requests of IANA: Updating the columns in the
-   "SFrame Cipher Suites" registry and adding entries to the updated
-   registry for the new cipher suites defined in this document.
+   This document makes three requests of IANA: Updating the columns in
+   the "SFrame Cipher Suites" registry, adding entries to the updated
+   registry for the new cipher suites defined in this document, and add
+   this document as an additional reference for this registry.
 
-5.1.  "SFrame Cipher Suites" Registry Update
+4.1.  "SFrame Cipher Suites" Registry Update
 
    The SFrame Cipher Suites registry should be updated to add the
    following columns:
@@ -165,63 +158,54 @@ Table of Contents
    *  Nt: The overhead in bytes of the encryption algorithm (typically
       the size of a "tag" that is added to the plaintext)
 
-   The "Change Controller" entry should be removed.
-
    Table 1 illustrates the new structure of the registry, and provides
    the required values for the currently registered entries.
 
-   +========+============================+==+===+==+==+==+=+===========+
-   | Value  | Name                       |Nh|Nka|Nk|Nn|Nt|R| Reference |
-   +========+============================+==+===+==+==+==+=+===========+
-   | 0x0000 | Reserved                   |- |-  |- |- |- |-| RFC 9605  |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
-   | 0x0001 | AES_128_CTR_HMAC_SHA256_80 |32|16 |48|12|10|Y| RFC 9605  |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
-   | 0x0002 | AES_128_CTR_HMAC_SHA256_64 |32|16 |48|12|8 |Y| RFC 9605  |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
-   | 0x0003 | AES_128_CTR_HMAC_SHA256_32 |32|16 |48|12|4 |Y| RFC 9605  |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
-   | 0x0004 | AES_128_GCM_SHA256_128     |32|n/a|16|12|16|Y| RFC 9605  |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
-   | 0x0005 | AES_256_GCM_SHA512_128     |64|n/a|32|12|16|Y| RFC 9605  |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
-   | 0xF000 | Reserved for Private Use   |- |-  |- |- |- |-| RFC 9605  |
-   | -      |                            |  |   |  |  |  | |           |
-   | 0xFFFF |                            |  |   |  |  |  | |           |
-   +--------+----------------------------+--+---+--+--+--+-+-----------+
+   +======+==========================+==+===+==+==+==+=+=========+==========+
+   |Value |Name                      |Nh|Nka|Nk|Nn|Nt|R|Reference|Change    |
+   |      |                          |  |   |  |  |  | |         |Controller|
+   +======+==========================+==+===+==+==+==+=+=========+==========+
+   |0x0000|Reserved                  |- |-  |- |- |- |-|RFC 9605 |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0001|AES_128_CTR_HMAC_SHA256_80|32|16 |48|12|10|Y|RFC 9605 |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0002|AES_128_CTR_HMAC_SHA256_64|32|16 |48|12|8 |Y|RFC 9605 |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0003|AES_128_CTR_HMAC_SHA256_32|32|16 |48|12|4 |Y|RFC 9605 |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0004|AES_128_GCM_SHA256_128    |32|n/a|16|12|16|Y|RFC 9605 |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0005|AES_256_GCM_SHA512_128    |64|n/a|32|12|16|Y|RFC 9605 |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0xF000|Reserved for Private Use  |- |-  |- |- |- |-|RFC 9605 |IETF      |
+   |-     |                          |  |   |  |  |  | |         |          |
+   |0xFFFF|                          |  |   |  |  |  | |         |          |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
 
       Table 1: New structure and contents of the SFrame Cipher Suites
                                   registry
 
-5.2.  Cipher Suites for AES-256-CTR with HMAC-SHA512
+4.2.  Cipher Suites for AES-256-CTR with HMAC-SHA512
 
    The following new entries should be added to the SFrame Cipher Suites
    registry:
 
-    +======+============================+==+===+==+==+==+=+===========+
-    |Value | Name                       |Nh|Nka|Nk|Nn|Nt|R| Reference |
-    +======+============================+==+===+==+==+==+=+===========+
-    |0x0006| AES_256_CTR_HMAC_SHA512_80 |64|32 |96|12|10|Y| RFC XXXX  |
-    +------+----------------------------+--+---+--+--+--+-+-----------+
-    |0x0007| AES_256_CTR_HMAC_SHA512_64 |64|32 |96|12|8 |Y| RFC XXXX  |
-    +------+----------------------------+--+---+--+--+--+-+-----------+
-    |0x0008| AES_256_CTR_HMAC_SHA512_32 |64|32 |96|12|4 |Y| RFC XXXX  |
-    +------+----------------------------+--+---+--+--+--+-+-----------+
+   +======+==========================+==+===+==+==+==+=+=========+==========+
+   |Value |Name                      |Nh|Nka|Nk|Nn|Nt|R|Reference|Change    |
+   |      |                          |  |   |  |  |  | |         |Controller|
+   +======+==========================+==+===+==+==+==+=+=========+==========+
+   |0x0006|AES_256_CTR_HMAC_SHA512_80|64|32 |96|12|10|Y|RFC XXXX |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0007|AES_256_CTR_HMAC_SHA512_64|64|32 |96|12|8 |Y|RFC XXXX |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
+   |0x0008|AES_256_CTR_HMAC_SHA512_32|64|32 |96|12|4 |Y|RFC XXXX |IETF      |
+   +------+--------------------------+--+---+--+--+--+-+---------+----------+
 
              Table 2: New entries SFrame Cipher Suites registry
 
-6.  References
+5.  References
 
-6.1.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+5.1.  Normative References
 
    [RFC9605]  Omara, E., Uberti, J., Murillo, S. G., Barnes, R., Ed.,
               and Y. Fablet, "Secure Frame (SFrame): Lightweight
@@ -229,7 +213,7 @@ Table of Contents
               DOI 10.17487/RFC9605, August 2024,
               <https://www.rfc-editor.org/rfc/rfc9605>.
 
-6.2.  Informative References
+5.2.  Informative References
 
    [TestVectors]
               "SFrame Test Vectors", September 2025,
@@ -262,15 +246,15 @@ A.1.  AEAD Encryption/Decryption Using AES-CTR and HMAC
    For each case, we provide:
 
    *  cipher_suite: The index of the cipher suite in use (see
-      Section 5.1)
+      Section 4.1)
 
    *  key: The key input to encryption/decryption
 
    *  enc_key: The encryption subkey produced by the derive_subkeys()
       algorithm
 
-   *  auth_key: The encryption subkey produced by the derive_subkeys()
-      algorithm
+   *  auth_key: The authentication subkey produced by the
+      derive_subkeys() algorithm
 
    *  nonce: The nonce input to encryption/decryption
 
@@ -296,7 +280,7 @@ A.2.  SFrame Encryption/Decryption
    For each case, we provide:
 
    *  cipher_suite: The index of the cipher suite in use (see
-      Section 5.1)
+      Section 4.1)
 
    *  kid: A KID value
 
