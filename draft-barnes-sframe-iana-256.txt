@@ -6,8 +6,8 @@ Secure Media Frames                                            R. Barnes
 Internet-Draft                                                     Cisco
 Updates: 9605 (if approved)                                     E. Omara
 Intended status: Standards Track                            A. Rosenberg
-Expires: 30 October 2026                                           Apple
-                                                           28 April 2026
+Expires: 1 November 2026                                           Apple
+                                                           30 April 2026
 
 
                 Updates to SFrame Cipher Suites Registry
@@ -18,12 +18,11 @@ Abstract
    This document addresses two omissions in the Secure Frames (SFrame)
    protocol specification.  First, the definition of the IANA registry
    for SFrame ciphersuites omits several important fields.  This
-   document updates the IANA registry specified by [RFC9605] and
-   requests that IANA add those fields, defining the contents of those
-   fields for current entries.  Second, the AEAD construction based on
-   AES-CTR and HMAC is defined only for the 128-bit security level.
-   This document registers parallel constructions at the 256-bit
-   security level.
+   document updates the IANA registry specified by RFC 9605 and requests
+   that IANA add those fields, defining the contents of those fields for
+   current entries.  Second, the AEAD construction based on AES-CTR and
+   HMAC is defined only for the 128-bit security level.  This document
+   registers parallel constructions at the 256-bit security level.
 
 About This Document
 
@@ -57,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 October 2026.
+   This Internet-Draft will expire on 1 November 2026.
 
 Copyright Notice
 
