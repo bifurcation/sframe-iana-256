@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-05-03T00:16:15.262645+00:00",
+  "timestamp": "2026-05-05T00:18:09.429279+00:00",
   "repo": "bifurcation/sframe-iana-256",
   "labels": [
     {
@@ -153,7 +153,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-04-13T11:34:40Z",
-      "updatedAt": "2026-04-13T19:28:29Z",
+      "updatedAt": "2026-05-04T15:49:38Z",
       "baseRepository": "bifurcation/sframe-iana-256",
       "baseRefName": "main",
       "baseRefOid": "232b5dfd6591b3b6011e131ac6dc82ce3a2f78a1",
@@ -182,7 +182,7 @@
             "abbreviatedOid": "acf761f"
           },
           "author": "aronrosenberg",
-          "authorAssociation": "NONE",
+          "authorAssociation": "COLLABORATOR",
           "state": "APPROVED",
           "body": "",
           "createdAt": "2026-04-13T17:37:13Z",
@@ -203,7 +203,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-04-30T15:49:21Z",
-      "updatedAt": "2026-04-30T15:49:33Z",
+      "updatedAt": "2026-05-04T15:49:49Z",
       "baseRepository": "bifurcation/sframe-iana-256",
       "baseRefName": "main",
       "baseRefOid": "720156c769f1da574c048e12305903a0c6eec6e2",
