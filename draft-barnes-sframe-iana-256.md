@@ -192,8 +192,6 @@ An implementation should verify that the following are true, where
 The other values in the test vector are intermediate values provided to
 facilitate debugging of test failures.
 
-{::include test-vectors/aes256-ctr-hmac.md}
-
 ## SFrame Encryption/Decryption
 
 For each case, we provide:
